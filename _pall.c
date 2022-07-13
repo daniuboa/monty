@@ -5,8 +5,6 @@
  * @stack: double pointer to the head of stack
  * @line_number: script line number.
  *
- * If the stack is empty, don’t print anything.
- *
  * Return: No return.
  */
 void _pall(stack_t **stack, unsigned int line_number)
