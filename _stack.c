@@ -5,10 +5,11 @@
  * @stack: double pointer to the head of stack.
  * @line_number: script line number
  *
- * Return: No return.
+ * Return: Void.
  */
 void _stack(stack_t **stack, unsigned int line_number)
 {
-	(*stack)->n = STACK;
-	(void)line_number;
+	(void)(stack);
+	(void)(line_number);
+	var.queue = QUEUE;
 }
