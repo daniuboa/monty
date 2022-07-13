@@ -7,14 +7,16 @@
  *
  * Return: No return.
  */
-void _pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t **stack, unsigned int n)
 {
-	stack_t *element = *stack;
+	stack_t *current = NULL;
+	(void)n;
 
-	(void)(line_number);
-	while (element != NULL)
+	current = *stack;
+
+	while (current != NULL)
 	{
-		printf("%d\n", element->n);
-		element = element->next;
+		dprintf(STDOUT_FILENO, "%d\n", current->n);
+		current = current->next;
 	}
 }
