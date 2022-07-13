@@ -3,20 +3,12 @@
 /**
  * _pall - function that print all values on the stack from the top.
  * @stack: double pointer to the head of stack
- * @line_number: script line number.
+ * @line_ctn: script line number.
  *
  * Return: No return.
  */
-void _pall(stack_t **stack, unsigned int n)
+
+void pall(stack_t **stack, unsigned int line_cnt __attribute__((unused)))
 {
-	stack_t *current = NULL;
-	(void)n;
-
-	current = *stack;
-
-	while (current != NULL)
-	{
-		dprintf(STDOUT_FILENO, "%d\n", current->n);
-		current = current->next;
-	}
+	print_stack(*stack);
 }
