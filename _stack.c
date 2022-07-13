@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _stack - function that sets the format of the data to a stack (LIFO).
+ * _stack - Converts a queue to a stack.
  * @stack: double pointer to the head of stack.
  * @line_number: script line number
  *
@@ -9,7 +9,6 @@
  */
 void _stack(stack_t **stack, unsigned int line_number)
 {
-	(void)(stack);
-	(void)(line_number);
-	var.queue = QUEUE;
+	(*stack)->n = STACK;
+	(void)line_number;
 }
