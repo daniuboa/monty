@@ -5,17 +5,30 @@
  * @stack: double pointer to the head of stack.
  * @line_number: script line number.
  *
- * Return: No return.
+ * Return: void.
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new = NULL;
-	(void)line_number;
+	char *n = global.argument;
 
-	new = new_Node(value);
+	if ((is_digit(n)) == 0)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_cnt);
+		exit(EXIT_FAILURE);
+	}
 
-	new->next = *stack;
-	if (*stack != NULL)
-		(*stack)->prev = new;
-	*stack = new;
+	if (global.data_struct == 1)
+	{
+		if (!add_node(stack, atoi(global.argument)))
+		{
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		if (!queue_node(stack, atoi(global.argument)))
+		{
+			exit(EXIT_FAILURE);
+		}
+	}
 }
